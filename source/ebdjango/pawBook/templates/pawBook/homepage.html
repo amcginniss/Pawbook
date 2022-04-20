@@ -1,0 +1,42 @@
+{% extends "pawBook/layout.html" %}
+
+{% block title %}
+   PawBook
+{% endblock %}
+
+{% block body %}
+<div class="container p-3 my-3 bg-light border">
+   <h2> Other Users Posts </h2>
+</div>
+<div>
+   {% for post in posts %}
+      {% if post.2 == "update" %}
+      <div class="container p-3 my-3 bg-light border">
+         <h3> Content Post </h3>
+         <h3> Username: {{ post.0 }} </h3>
+         <h3> Title: {{ post.1 }} </h3>
+         <h3> Content: {{ post.3 }}</h3>
+      </div>
+      {% elif post.2 == "weather" %}
+      <div class="container p-3 my-3 bg-light border">
+         <h3> Weather Post </h3>
+         <h3> Username: {{ post.0 }} </h3>
+         <h3> Title: {{ post.1 }} </h3>
+         <h3> Location: {{ post.5 }}</h3>
+         <h3> Temperature: {{ post.3 }}</h3>
+         <h3> Conditions: {{ post.4 }}</h3>
+      </div>
+      {% elif post.2 == "dogPic" %}
+      <div class="container p-3 my-3 bg-light border">
+         <h3> Picture Post </h3>
+         <h3> Username: {{ post.0 }} </h3>
+         <h3> Title: {{ post.1 }} </h3>
+         <h3> Content: {{ post.2 }}</h3>
+         <h3> Img: </h3>
+         <img src="{{ post.3 }}" alt="Dog Picture">
+      </div>
+      {% endif %}
+   {% endfor %}
+</div>
+
+{% endblock %}

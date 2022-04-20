@@ -1,0 +1,24 @@
+{% extends "pawBook/layout.html" %}
+
+{% block title %}
+   PawBook
+{% endblock %}
+
+{% block body %}
+  {% load crispy_forms_tags %}
+  {{ messages }}
+  <div class="container-fluid">
+      <div class="col-md-6 offset-md-3">
+        <div class="signup-form">
+          <form action="" class="mt-5 border p-4 bg-light shadow" method="POST">
+            <h2>Create Account</h2>
+            {% csrf_token %}
+            {{ register_form|crispy }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+          </form>
+          <p class="text-center mt-3 text-secondary"><a href="#">Or Login Now</a></p>
+        </div>
+    </div>
+  </div>
+{% endblock %}

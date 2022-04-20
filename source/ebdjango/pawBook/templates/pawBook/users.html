@@ -1,0 +1,16 @@
+{% extends "pawBook/layout.html" %}
+
+{% block title %}
+PawBook
+{% endblock %}
+
+{% block body %}
+
+
+<h1>Users</h1>
+{% for user in users %}
+  <div class="container p-3 my-3 bg-light border">
+    <h2> {{ user.username }} </h2>
+  </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "pawBook/layout.html" %}
+
+{% block title %}
+   PawBook
+{% endblock %}
+
+{% block body %}
+   <div>
+      <h1>PawBook</h1>
+   </div>
+   <div>
+   <div class="d-grid gap-2 col-4 mx-auto">
+      <a href="{% url 'login' %}">
+         <button class="btn btn-light spaced" type="button"> Sign In</button>
+      </a>
+      <a href="{% url 'create' %}">
+         <button class="btn btn-light spaced" type="button">Create Account</button>
+      </a>
+   </div>
+   </div>
+
+{% endblock %}
