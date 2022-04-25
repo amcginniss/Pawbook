@@ -56,7 +56,7 @@ def create(request):
       if form.is_valid():
          user = form.save()
          login(request, user)
-         messages.add_message(request,messages.SUCCESS,"Registration successful.")
+         messages.add_message(request, messages.SUCCESS, "Registration successful.")
          return redirect('login')
       messages.add_message(request, messages.ERROR,"Unsuccessful Registration")
    form = NewUserForm()
@@ -240,8 +240,7 @@ def users(request):
       return render(request, "pawBook/users.html", context={"users":users
    })
    else:
-      return render(request, "pawBook/login.html", {
-    })
+      return redirect('login')
 
 def profile(request):
    if request.user.is_authenticated:
