@@ -56,7 +56,7 @@ def create(request):
       if form.is_valid():
          user = form.save()
          login(request, user)
-         messages.add_message(request, messages.SUCCESS, "Registration successful.")
+         messages.add_message(request, messages.SUCCESS,"Registration successful.")
          return redirect('login')
       messages.add_message(request, messages.ERROR,"Unsuccessful Registration")
    form = NewUserForm()
@@ -275,7 +275,6 @@ def profile(request):
             elif a['type'] == 'update':
                post = [username, title, 'update', a['content']]
                posts.append(post)
-
       return render(request, "pawBook/profile.html", 
       {
          "posts":posts
